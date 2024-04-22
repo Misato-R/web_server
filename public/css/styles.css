@@ -1,0 +1,136 @@
+/* 全局样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #7777e9;
+    color: #1b1b1b;
+}
+
+/* 首页样式 */
+.home-page {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9898ed;
+    color: #1b1b1b;
+}
+
+.home-page header {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+.home-page article {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 博客帖子页面样式 */
+.post header {
+    background-color: #9aaae4;
+    color: white;
+}
+
+.post article {
+    background-color: #f4f4f9;
+    padding: 15px;
+    border-left: 5px solid #007bff;
+}
+
+.login-form {
+    max-width: 300px; /* 设置最大宽度 */
+    margin: 20px auto; /* 上下边距为20px，左右自动居中 */
+    padding: 20px; /* 内边距 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 5px; /* 边框圆角 */
+    background-color: #f9f9f9; /* 背景颜色 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 盒子阴影 */
+}
+
+.register-form {
+    max-width: 300px; /* 设置最大宽度 */
+    margin: 20px auto; /* 上下边距为20px，左右自动居中 */
+    padding: 20px; /* 内边距 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 5px; /* 边框圆角 */
+    background-color: #f9f9f9; /* 背景颜色 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 盒子阴影 */
+}
+
+.navbar-right {
+    align-self: flex-end; /* 将登录和注册链接对齐到右边 */
+    position: absolute; /* 使用绝对定位 */
+    right: 10px; /* 距离右边框10px */
+    top: 10px; /* 距离顶部10px */
+}
+
+header, footer {
+    background-color: #9aaae4;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #282828;
+}
+
+img {
+    width: 100%; /* 让图片宽度自动适应容器宽度 */
+    height: auto; /* 高度自动，保持图片比例 */
+    border: 1px solid #ccc; /* 添加边框 */
+    padding: 10px; /* 添加内边距 */
+    margin: 20px 0; /* 在图片上下添加外边距 */
+}
+
+
+a {
+    color: #0077cc;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+/* 特定页面样式 */
+h1, h2 {
+    font-weight: normal;
+}
+
+h2 a {
+    color: #333;
+}
+
+article p {
+    line-height: 1.6;
+}

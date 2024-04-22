@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>博客标题 - 我的博客</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="post1">
+    <header>
+        <h1>博客标题</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="game.html">游戏</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2>详细标题</h2>
+            <p>这里是博客2的全文内容。在这里详细描述您的主题。</p>
+            <img src="../images/2.jpg" alt="2" title="2">
+        </article>
+    </main>
+
+    <article>
+        <h2>详细标题</h2>
+        <p>这里是博客的全文内容。在这里详细描述您的主题。</p>
+    </article>
+    <section>
+        <h3>评论</h3>
+        <form id="comment-form">
+            <textarea id="comment-box" placeholder="写下你的评论..." rows="4" required></textarea>
+            <button type="submit">提交评论</button>
+            <button type="button" id="clear-comments">清空评论</button>
+        </form>
+        <div id="comments-container"></div>
+    </section>
+    
+    <footer>
+        <p>版权所有 © <span id="current-year"></span> 我的博客</p> 
+    </footer>
+    <script src="../js/scripts.js"></script> 
+</body>
+</html>

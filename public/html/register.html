@@ -1,0 +1,36 @@
+<!-- 示例：register.html -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h2>Register</h2>
+        <nav>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="game.html">游戏</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article class="register-form">
+        <form action="/register" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+    </article>
+
+    <footer>
+        <p>版权所有 © <span id="current-year"></span> 我的博客</p> 
+    </footer>
+    <script src="../js/scripts.js"></script> 
+</body>
+</html>
