@@ -60,6 +60,28 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 盒子阴影 */
 }
 
+.profile-form {
+    max-width: 300px; /* 设置最大宽度 */
+    margin: 20px auto; /* 上下边距为20px，左右自动居中 */
+    padding: 20px; /* 内边距 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 5px; /* 边框圆角 */
+    background-color: #f9f9f9; /* 背景颜色 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 盒子阴影 */
+}
+
+/* 右上角的头像格式 */
+.top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.top-left img {
+    width: 32px;
+    height: 32px;
+}
+
 .navbar-right {
     align-self: flex-end; /* 将登录和注册链接对齐到右边 */
     position: absolute; /* 使用绝对定位 */

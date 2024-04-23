@@ -34,5 +34,6 @@ document.getElementById('clear-comments').addEventListener('click', function() {
     document.getElementById('comments-container').innerHTML = ''; // 清空页面上的评论显示
 });
 
+
 // 在页面加载时调用
 window.onload = loadComments;

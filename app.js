@@ -74,13 +74,69 @@ app.post('/login', async (req, res) => {
         const user = await User.findOne({ username: req.body.username });
         if (user && await bcrypt.compare(req.body.password, user.password)) {
             req.session.user = user._id; // 验证通过，保存用户 session
-            res.redirect('./html/about.html'); // 导航到仪表板
+            res.redirect('./user/profile.html'); // 导航到仪表板
         } else {
-            res.status(401).send("Username or password is incorrect");
+            res.status(401).send(`<script>alert('Username or password is incorrect'); window.location.href='./html/login.html';</script>`);
         }
     } catch (err) {
         console.error('Error logging in', err);
         res.status(500).send("Error logging in.");
     }
 });
+
+//在个人界面显示用户名
+app.get('/get-username', async(req, res) => {
+    console.log("Session user ID:", req.session.user);
+    const user = await User.findById(req.session.user);
+    console.log("Found user:", user)
+    if (user) {
+        res.json({ username: user.username });
+    } else {
+        res.status(401).send("Unauthorized");
+    }
+});
+
+
+//处理更新密码，核对旧密码，与更新数据库新密码
+app.post('/update-password', async (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).send("Unauthorized");
+    }
+
+    const { oldPassword, newPassword, confirmNewPassword } = req.body;
+    if (newPassword !== confirmNewPassword) {
+        return res.status(400).send("New passwords do not match.");
+    }
+
+    try {
+        //console.log("Session user ID:", req.session.user);
+        const user = await User.findById(req.session.user);
+        //console.log("Found user:", user);
+        if (!user) {
+            return res.status(404).send("User not found.");
+        }
+        const isMatch = await bcrypt.compare(oldPassword, user.password);
+        if (!isMatch) {
+            return res.status(400).send(`<script>alert('Old password is incorrect.'); window.location.href='./user/profile.html';</script>`);
+        }
+
+        const hashedNewPassword = await bcrypt.hash(newPassword, saltRounds);
+        user.password = hashedNewPassword;
+        await user.save();
+        res.send(`<script>alert('Password updated successfully.'); window.location.href='./html/login.html';</script>`);
+    } catch (error) {
+        console.error('Error updating password', error);
+        res.status(500).send("Internal server error.");
+    }
+});
+
+//处理个人登录状态
+app.get('/api/check-login', (req, res) => {
+    if (req.session.user) {
+        res.json({ loggedIn: true });
+    } else {
+        res.json({ loggedIn: false });
+    }
+});
+
 
